@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Finance - UiTM MyFund Portal</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Quicksand', sans-serif;
+      background-color: #f4ecf7;
+      margin: 0;
+      padding: 0;
+    }
+
+    .navbar {
+      background: linear-gradient(90deg, #d1c4e9, #ede7f6);
+      border-radius: 20px;
+      margin: 15px auto;
+      width: 95%;
+      box-shadow: 0 4px 12px rgba(100, 58, 151, 0.2);
+    }
+
+    .navbar-brand img {
+      height: 50px;
+    }
+
+    .nav-link {
+      color: #333 !important;
+      font-weight: 600;
+      border-radius: 10px;
+      padding: 6px 15px;
+      transition: background-color 0.3s;
+    }
+
+    .nav-link:hover {
+      background-color: #b39ddb;
+      color: white !important;
+    }
+
+    .container {
+      padding: 40px 20px;
+    }
+
+    .section-title {
+      color: #643a97;
+      margin-bottom: 25px;
+      font-weight: 600;
+    }
+
+    .card-custom {
+      background-color: #ffffff;
+      border-radius: 20px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 12px rgba(100, 58, 151, 0.1);
+    }
+
+    .form-label {
+      font-weight: 500;
+      color: #643a97;
+    }
+
+    footer {
+      background-color: #3f51b5;
+      color: white;
+      padding: 10px 0;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark px-4">
+    <a class="navbar-brand" href="#">
+      <img src="nav.png" alt="UiTM Logo" />
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="index.html">Dashboard</a></li>
+        <li class="nav-item"><a class="nav-link" href="finance.html">Finance</a></li>
+        <li class="nav-item"><a class="nav-link" href="profile.html">Profile</a></li>
+        <li class="nav-item"><a class="nav-link" href="logout.html">Logout</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Finance Content -->
+  <div class="container">
+    <h2 class="text-center section-title">Financial Overview</h2>
+
+    <!-- PTPTN Section -->
+    <div class="card-custom">
+      <h4><b>PTPTN</b></h4>
+      <p><strong>Status:</strong> Active</p>
+      <p><strong>Total Approved:</strong> RM18,000</p>
+      <p><strong>Amount Disbursed:</strong> RM12,000</p>
+      <p><strong>Balance:</strong> RM6,000</p>
+      <p><strong>Next Disbursement:</strong> Semester 5</p>
+    </div>
+
+    <!-- Scholarship Section -->
+    <div class="card-custom">
+      <h4><b>Scholarship Details</b></h4>
+      <p class="text-muted">No scholarship record found.</p>
+      <button class="btn btn-outline-primary" onclick="toggleScholarshipForm()">Add Scholarship Info</button>
+       
+      <form id="scholarshipForm" style="display: none;" class="mt-3">
+        <div class="mb-3">
+          <label class="form-label">Scholarship Name</label>
+          <input type="text" class="form-control" placeholder="e.g. Bank Negara Scholarship">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Monthly Amount (RM)</label>
+          <input type="number" class="form-control">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Duration</label>
+          <input type="text" class="form-control" placeholder="e.g. Semester 2 - Semester 6">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Awarded By</label>
+          <input type="text" class="form-control">
+        </div>
+        <button class="btn btn-outline-primary">Save</button>
+      </form>
+    </div>
+
+    <!-- Personal Funding Section -->
+    <div class="card-custom">
+      <h4><b>Personal Financial</b></h4>
+      <div id="personalDisplay">
+        <p><strong>Funding Source:</strong> Parents</p>
+        <p><strong>Guarantor Name:</strong> Basri Che Mai</p>
+        <p><strong>Guarantor Phone Number:</strong> 012-3456789</p>
+        <button class="btn btn-outline-primary" onclick="togglePersonalForm()">Edit</button>
+      </div>
+
+      <form id="personalForm" style="display: none;" class="mt-3">
+        <div class="mb-3">
+          <label class="form-label">Funding Source</label>
+          <input type="text" class="form-control" placeholder="e.g. Parents">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Guarantor Name</label>
+          <input type="text" class="form-control">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Guarantor Phone Number</label>
+          <input type="text" class="form-control">
+        </div>
+        <button class="btn btn-outline-primary">Save</button>
+      </form>
+    </div>
+  </div>
+
+<!-- Footer -->
+  <footer>
+    &copy; 2025 UiTM MyFund Portal. All rights reserved.
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    function toggleScholarshipForm() {
+      const form = document.getElementById('scholarshipForm');
+      form.style.display = form.style.display === 'none' ? 'block' : 'none';
+    }
+
+    function togglePersonalForm() {
+      const display = document.getElementById('personalDisplay');
+      const form = document.getElementById('personalForm');
+      display.style.display = 'none';
+      form.style.display = 'block';
+    }
+  </script>
+</body>
+</html>

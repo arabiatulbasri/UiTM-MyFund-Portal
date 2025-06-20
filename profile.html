@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Profile - UiTM MyFund Portal</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <style>
+    body {
+      font-family: 'Quicksand', sans-serif;
+      background-color: #f4ecf7;
+      margin: 0;
+      padding: 0;
+    }
+
+     .navbar {
+      background: linear-gradient(90deg, #d1c4e9, #ede7f6);
+      border-radius: 20px;
+      margin: 15px auto;
+      width: 95%;
+      box-shadow: 0 4px 12px rgba(100, 58, 151, 0.2);
+    }
+
+    .navbar-brand img {
+      height: 50px;
+    }
+
+    .nav-link {
+      color: #333 !important;
+      font-weight: 600;
+      border-radius: 10px;
+      padding: 6px 15px;
+      transition: background-color 0.3s;
+    }
+
+    .nav-link:hover {
+      background-color: #b39ddb;
+      color: white !important;
+    }
+
+    footer {
+      background-color: #3f51b5;
+      color: white;
+      padding: 12px 0;
+      text-align: center;
+      font-size: 0.9rem;
+      margin-top: 30px;
+    }
+  </style>
+  </head>
+
+<body>
+
+   <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark px-4">
+    <a class="navbar-brand" href="#">
+      <img src="nav.png" alt="UiTM Logo" />
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="index.html">Dashboard</a></li>
+        <li class="nav-item"><a class="nav-link" href="finance.html">Finance</a></li>
+        <li class="nav-item"><a class="nav-link" href="profile.html">Profile</a></li>
+        <li class="nav-item"><a class="nav-link" href="logout.html">Logout</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="container mt-5">
+    <h2 class="mb-4">Student Profile</h2>
+    <div class="card">
+      <div class="card-body">
+        <div class="row mb-3">
+          <div class="col-md-4">
+            <img src="profile.jpeg" class="img-thumbnail" alt="Profile Photo">
+          </div>
+          <div class="col-md-8">
+            <h4>Rabiatul Basri</h4>
+            <p><strong>Student ID:</strong> 2023858886</p>
+            <p><strong>Email:</strong> 2023858886@student.uitm.edu.my</p>
+            <p><strong>Faculty:</strong> Faculty of Information Science</p>
+            <p><strong>Program:</strong> Bachelor of Information Science (Hons) Information Systems Management</p>
+            <p><strong>Current Semester:</strong> Semester 4</p>
+            <p><strong>Status:</strong> Active</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+ <!-- Footer -->
+  <footer>
+    &copy; 2025 UiTM MyFund Portal. All rights reserved.
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
